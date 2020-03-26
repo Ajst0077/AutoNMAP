@@ -36,9 +36,9 @@ def main():
             print("protocol : %s" % proto)
 
             ports = nm[host][proto].keys()
-            ports.sort()
+            # ports.sort()
             for port in ports:
-                print("Port : %s \t State : %s " % (port[host][proto][port]['State']))
+                print("Port : %s \t State : %s " % (port, nm[host][proto][port]['State']))
 
 
 if __name__ == "__main__":
