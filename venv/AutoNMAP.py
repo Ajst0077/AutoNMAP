@@ -19,7 +19,7 @@ def main():
     # Initialization of Nmap
     try:
         nm = nmap.PortScanner()
-        nm.scan(iptarget, rgports, -T5 - Pn - sV - sT)
+        nm.scan(iptarget, rgports)
     except nmap.PortScannerError:
         print('Nmap not found', sys.exc_info()[0])
     except:
