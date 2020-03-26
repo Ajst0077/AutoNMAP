@@ -37,7 +37,7 @@ def main():
             print("     protocol : %s" % proto)
             ports = nm[host][proto].keys()
             for port in ports:
-                print("     Port : %s \t State : %s \t Service : %s" % (
+                print("     Port : %s\tState : %s\tService : %s" % (
                     port, nm[host][proto][port]['state'], nm[host][proto][port]['name']))
             print("---------" * 7)
 
