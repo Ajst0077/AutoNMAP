@@ -28,17 +28,20 @@ def main():
 
     # Write result of scanning
     for host in nm.all_hosts():
-        print("Host: %s (%s)" % (host, iptarget))
-        print("State: %s" % nm[host].state())
+        print("     Host: %s (%s)" % (host, iptarget))
+        print("     State: %s" % nm[host].state())
 
         for proto in nm[host].all_protocols():
             print("---------" * 6)
-            print("protocol : %s" % proto)
+            print("     protocol : %s" % proto)
 
             ports = nm[host][proto].keys()
-            # ports.sort()
             for port in ports:
-                print("Port : %s \t State : %s " % (port, nm[host][proto][port]['State']))
+                print("Port : %s \t State : %s " % (port, nm[host][proto][port]['state']))
+
+            if nm[host].all_protocols() == none:
+                print("     NO OPEN PORTS")
+            print("---------" * 6)
 
 
 if __name__ == "__main__":
