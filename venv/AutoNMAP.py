@@ -19,7 +19,7 @@ def main():
     # Initialization of Nmap
     try:
         nm = nmap.PortScanner()
-        nm.scan(iptarget, rgports, arguments='-sV')
+        nm.scan(iptarget, rgports, arguments='-vv -sA -sV -O')
     except nmap.PortScannerError:
         print('Nmap not found', sys.exc_info()[0])
     except:
@@ -36,9 +36,8 @@ def main():
             print("     protocol : %s" % proto)
             ports = nm[host][proto].keys()
             for port in ports:
-                print("Port : %s \t State : %s \t Service : %s" % (
-                    port, nm[host][proto][port]['state'], nm[host][proto][port]['service']))
-            print(nm.scaninfo())
+                print("     Port : %s \t State : %s \t Service : %s" % (
+                    port, nm[host][proto][port]['state'], nm[host][proto][port]['name']))
             print("---------" * 6)
 
 
