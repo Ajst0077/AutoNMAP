@@ -38,3 +38,7 @@ def main():
             ports.sort()
             for port in ports:
                 print("Port : %s \t State : %s " % (port[host][proto][port]['State']))
+
+
+if __name__ == "__main__":
+    sys.exit(main())
