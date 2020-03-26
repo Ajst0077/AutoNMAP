@@ -1,6 +1,7 @@
 import sys
 import os
 import nmap
+import socket
 
 
 def main():
@@ -12,7 +13,7 @@ def main():
     rgports = sys.argv[2]
 
     print("---------" * 6)
-    print("     SCANNING THE TARGET" + iptarget)
+    print("     SCANNING THE TARGET " + iptarget)
     print("---------" * 6)
 
     # Initialization of Nmap
