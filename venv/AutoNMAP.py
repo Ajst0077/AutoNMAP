@@ -37,9 +37,9 @@ def main():
 
             ports = nm[host][proto].keys()
             for port in ports:
-                print("Port : %s \t State : %s " % (port, nm[host][proto][port]['state']))
+                print("     Port : %s \t State : %s " % (port, nm[host][proto][port]['state']))
 
-            if nm[host].all_protocols() == none:
+            if not nm[host].all_protocols():
                 print("     NO OPEN PORTS")
             print("---------" * 6)
 
