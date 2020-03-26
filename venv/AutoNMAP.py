@@ -28,11 +28,11 @@ def main():
 
     # Write result of scanning
     for host in nm.all_hosts():
-        print(" \ / \ / \ / \ / " * 7)
+        print("|||||||||" * 7)
         print("     Host: %s (%s)" % (host, iptarget))
         print("     State: %s" % nm[host].state())
         print("     OS type: %s" % nm[host]['vendor'])
-        print(" / \ / \ / \ / \ " * 7)
+        print("|||||||||" * 7)
 
         for proto in nm[host].all_protocols():
             print("+++++++++" * 7)
