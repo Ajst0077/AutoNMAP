@@ -30,6 +30,7 @@ def main():
     for host in nm.all_hosts():
         print("     Host: %s (%s)" % (host, iptarget))
         print("     State: %s" % nm[host].state())
+        print("     OS type: %s" % nm[host]['osclass']['type'])
 
         for proto in nm[host].all_protocols():
             print("+++++++++" * 6)
