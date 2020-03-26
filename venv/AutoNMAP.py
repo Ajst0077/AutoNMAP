@@ -12,9 +12,9 @@ def main():
     iptarget = sys.argv[1]
     rgports = sys.argv[2]
 
-    print("---------" * 6)
+    print("---------" * 7)
     print("     SCANNING THE TARGET " + iptarget)
-    print("---------" * 6)
+    print("---------" * 7)
 
     # Initialization of Nmap
     try:
@@ -30,16 +30,16 @@ def main():
     for host in nm.all_hosts():
         print("     Host: %s (%s)" % (host, iptarget))
         print("     State: %s" % nm[host].state())
-        print("     OS type: %s" % nm[host]['osclass']['type'])
+        print("     OS type: %s" % nm[host]['vendor'])
 
         for proto in nm[host].all_protocols():
-            print("+++++++++" * 6)
+            print("+++++++++" * 7)
             print("     protocol : %s" % proto)
             ports = nm[host][proto].keys()
             for port in ports:
                 print("     Port : %s \t State : %s \t Service : %s" % (
                     port, nm[host][proto][port]['state'], nm[host][proto][port]['name']))
-            print("---------" * 6)
+            print("---------" * 7)
 
 
 if __name__ == "__main__":
