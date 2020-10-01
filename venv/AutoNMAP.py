@@ -1,3 +1,4 @@
+#Update new lib very soon i will convert into go laungage
 import sys
 import os
 import nmap
